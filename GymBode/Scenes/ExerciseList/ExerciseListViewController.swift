@@ -29,10 +29,11 @@ class ExerciseListViewController: UIViewController {
 
 extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 96
+        return ExerciseCell.rowHeight
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // TODO: - Populate from viewModel
         return 20
     }
     
@@ -42,6 +43,7 @@ extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource
             return UITableViewCell()
         }
         
+        // TODO: - Populate from viewModel
         let viewModel = ExerciseCellViewModel(with: Exercise(id: 1, name: "hello", images: []))
         cell.configureCell(with: viewModel)
         
