@@ -9,8 +9,6 @@ import UIKit
 import SwiftUI
 
 class ExerciseListViewController: UIViewController {
-    private let cellReuseIdentifier = "ExerciseCell"
-
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func didTapRefresh(_ sender: UIBarButtonItem) {
@@ -25,17 +23,27 @@ class ExerciseListViewController: UIViewController {
         view.backgroundColor = .cyan
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(ExerciseCell.nib(), forCellReuseIdentifier: ExerciseCell.reuseIdentifier)
     }
 }
 
 extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 96
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier,
-                                                 for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseCell.reuseIdentifier,
+                                                       for: indexPath) as? ExerciseCell else {
+            return UITableViewCell()
+        }
+        
+        let viewModel = ExerciseCellViewModel(with: Exercise(id: 1, name: "hello", images: []))
+        cell.configureCell(with: viewModel)
         
         return cell
     }
