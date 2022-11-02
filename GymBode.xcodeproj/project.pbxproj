@@ -17,6 +17,7 @@
 		8900298E2912893F00B65DAA /* GymBodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900298D2912893F00B65DAA /* GymBodeUITests.swift */; };
 		890029902912893F00B65DAA /* GymBodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900298F2912893F00B65DAA /* GymBodeUITestsLaunchTests.swift */; };
 		890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029A82912A82300B65DAA /* ExerciseListViewModel.swift */; };
+		890029AB2912AED400B65DAA /* ExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029AA2912AED400B65DAA /* ExerciseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8900298D2912893F00B65DAA /* GymBodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymBodeUITests.swift; sourceTree = "<group>"; };
 		8900298F2912893F00B65DAA /* GymBodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymBodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		890029A82912A82300B65DAA /* ExerciseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModel.swift; sourceTree = "<group>"; };
+		890029AA2912AED400B65DAA /* ExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		890029A12912A1A000B65DAA /* ExerciseService */ = {
 			isa = PBXGroup;
 			children = (
+				890029AA2912AED400B65DAA /* ExerciseService.swift */,
 			);
 			path = ExerciseService;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890029AB2912AED400B65DAA /* ExerciseService.swift in Sources */,
 				890029712912893D00B65DAA /* ExerciseListViewController.swift in Sources */,
 				8900296D2912893D00B65DAA /* AppDelegate.swift in Sources */,
 				890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */,
