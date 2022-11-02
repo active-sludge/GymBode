@@ -193,16 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				890029A42912A1B600B65DAA /* Response */,
-				890029A32912A1B200B65DAA /* Request */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		890029A32912A1B200B65DAA /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		890029A42912A1B600B65DAA /* Response */ = {
