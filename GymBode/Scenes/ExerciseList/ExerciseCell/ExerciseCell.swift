@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExerciseCell: UITableViewCell {
+final class ExerciseCell: UITableViewCell {
     public static let rowHeight: CGFloat = 120.0
     public static let reuseIdentifier = String(describing: ExerciseCell.self)
     

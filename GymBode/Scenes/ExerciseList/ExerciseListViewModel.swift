@@ -7,13 +7,11 @@
 
 import Combine
 
-protocol ExerciseListViewModeling {
-    func fetchExerciseList()
-}
-
-class ExerciseListViewModel: ExerciseListViewModeling {
+final class ExerciseListViewModel {
     private var bindings = Set<AnyCancellable>()
     private let service: ExerciseServicable
+    
+    @Published var exercises: [Exercise] = []
     
     init(service: ExerciseServicable = ExerciseService()) {
         self.service = service
@@ -29,8 +27,8 @@ class ExerciseListViewModel: ExerciseListViewModeling {
                 case .finished:
                     print("Finished")
                 }
-            } receiveValue: { response in
-                dump(response.exercises)
+            } receiveValue: { [weak self] response in
+                self?.exercises = response.exercises
             }
             .store(in: &bindings)
 

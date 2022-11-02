@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExerciseCellViewModel {
+final class ExerciseCellViewModel {
     let exerciseImage: UIImageView
     let title: String
     

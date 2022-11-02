@@ -6,35 +6,54 @@
 //
 
 import UIKit
-import SwiftUI
+import Combine
 
-class ExerciseListViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+final class ExerciseListViewController: UIViewController {
+    // MARK: - IBOutlets
+    @IBOutlet private weak var tableView: UITableView!
     
-    @IBAction func didTapRefresh(_ sender: UIBarButtonItem) {
+    // MARK: - IBActions
+    @IBAction private func didTapRefresh(_ sender: UIBarButtonItem) {
         viewModel.fetchExerciseList()
     }
     
-    var viewModel: ExerciseListViewModeling = ExerciseListViewModel()
+    // MARK: - Properties
+    private var viewModel = ExerciseListViewModel()
+    private var bindings = Set<AnyCancellable>()
 
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         view.backgroundColor = .cyan
+        
+        setupBindings()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ExerciseCell.nib(), forCellReuseIdentifier: ExerciseCell.reuseIdentifier)
     }
+    
+    private func setupBindings() {
+        viewModel.$exercises
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] _ in
+                self?.tableView.reloadData()
+            })
+            .store(in: &bindings)
+    }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ExerciseCell.rowHeight
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: - Populate from viewModel
-        return 20
+        return viewModel.exercises.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,8 +62,7 @@ extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource
             return UITableViewCell()
         }
         
-        // TODO: - Populate from viewModel
-        let viewModel = ExerciseCellViewModel(with: Exercise(id: 1, name: "hello", images: []))
+        let viewModel = ExerciseCellViewModel(with: viewModel.exercises[indexPath.row])
         cell.configureCell(with: viewModel)
         
         return cell

@@ -19,7 +19,7 @@ protocol ExerciseServicable {
     func getExerciseDetail(with id: Int)
 }
 
-class ExerciseService {
+final class ExerciseService {
     private var baseURLString: String = "https://wger.de/api/v2/"
     
     enum Path {
@@ -47,6 +47,7 @@ class ExerciseService {
         return urlRequest
     }
 }
+
 extension ExerciseService: ExerciseServicable {
     
     func getExerciseList() -> AnyPublisher<ExerciseListResponse, Error> {
