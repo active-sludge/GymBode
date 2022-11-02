@@ -10,6 +10,7 @@ import UIKit
 class ExerciseListViewController: UIViewController {
     
     @IBAction func fetchButton(_ sender: UIButton) {
+        viewModel.fetchExerciseList()
     }
     
     var viewModel: ExerciseListViewModeling = ExerciseListViewModel()

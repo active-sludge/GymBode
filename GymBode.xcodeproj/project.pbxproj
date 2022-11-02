@@ -18,6 +18,7 @@
 		890029902912893F00B65DAA /* GymBodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900298F2912893F00B65DAA /* GymBodeUITestsLaunchTests.swift */; };
 		890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029A82912A82300B65DAA /* ExerciseListViewModel.swift */; };
 		890029AB2912AED400B65DAA /* ExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029AA2912AED400B65DAA /* ExerciseService.swift */; };
+		890029AD2912B76500B65DAA /* ExerciseListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029AC2912B76500B65DAA /* ExerciseListResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8900298F2912893F00B65DAA /* GymBodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymBodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		890029A82912A82300B65DAA /* ExerciseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModel.swift; sourceTree = "<group>"; };
 		890029AA2912AED400B65DAA /* ExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseService.swift; sourceTree = "<group>"; };
+		890029AC2912B76500B65DAA /* ExerciseListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		890029A42912A1B600B65DAA /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				890029AC2912B76500B65DAA /* ExerciseListResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				890029712912893D00B65DAA /* ExerciseListViewController.swift in Sources */,
 				8900296D2912893D00B65DAA /* AppDelegate.swift in Sources */,
 				890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */,
+				890029AD2912B76500B65DAA /* ExerciseListResponse.swift in Sources */,
 				8900296F2912893D00B65DAA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
