@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8900296D2912893D00B65DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900296C2912893D00B65DAA /* AppDelegate.swift */; };
 		8900296F2912893D00B65DAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900296E2912893D00B65DAA /* SceneDelegate.swift */; };
-		890029712912893D00B65DAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029702912893D00B65DAA /* ViewController.swift */; };
+		890029712912893D00B65DAA /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029702912893D00B65DAA /* ExerciseListViewController.swift */; };
 		890029742912893D00B65DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890029722912893D00B65DAA /* Main.storyboard */; };
 		890029762912893F00B65DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890029752912893F00B65DAA /* Assets.xcassets */; };
 		890029792912893F00B65DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890029772912893F00B65DAA /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		890029692912893D00B65DAA /* GymBode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymBode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8900296C2912893D00B65DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8900296E2912893D00B65DAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		890029702912893D00B65DAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		890029702912893D00B65DAA /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		890029732912893D00B65DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		890029752912893F00B65DAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		890029782912893F00B65DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,13 +99,12 @@
 		8900296B2912893D00B65DAA /* GymBode */ = {
 			isa = PBXGroup;
 			children = (
-				8900296C2912893D00B65DAA /* AppDelegate.swift */,
-				8900296E2912893D00B65DAA /* SceneDelegate.swift */,
-				890029702912893D00B65DAA /* ViewController.swift */,
+				890029A62912A1F800B65DAA /* Resource */,
+				890029A52912A1D500B65DAA /* Delegates */,
+				8900299E2912A18400B65DAA /* Utility */,
+				8900299D2912A17F00B65DAA /* Network */,
+				8900299C2912A17A00B65DAA /* Scenes */,
 				890029722912893D00B65DAA /* Main.storyboard */,
-				890029752912893F00B65DAA /* Assets.xcassets */,
-				890029772912893F00B65DAA /* LaunchScreen.storyboard */,
-				8900297A2912893F00B65DAA /* Info.plist */,
 			);
 			path = GymBode;
 			sourceTree = "<group>";
@@ -125,6 +124,103 @@
 				8900298F2912893F00B65DAA /* GymBodeUITestsLaunchTests.swift */,
 			);
 			path = GymBodeUITests;
+			sourceTree = "<group>";
+		};
+		8900299C2912A17A00B65DAA /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				890029A72912A20E00B65DAA /* LaunchScreen */,
+				890029A02912A19100B65DAA /* ExerciseDetail */,
+				8900299F2912A18800B65DAA /* ExerciseList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8900299D2912A17F00B65DAA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				890029A22912A1AD00B65DAA /* Model */,
+				890029A12912A1A000B65DAA /* ExerciseService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8900299E2912A18400B65DAA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		8900299F2912A18800B65DAA /* ExerciseList */ = {
+			isa = PBXGroup;
+			children = (
+				890029702912893D00B65DAA /* ExerciseListViewController.swift */,
+			);
+			path = ExerciseList;
+			sourceTree = "<group>";
+		};
+		890029A02912A19100B65DAA /* ExerciseDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExerciseDetail;
+			sourceTree = "<group>";
+		};
+		890029A12912A1A000B65DAA /* ExerciseService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExerciseService;
+			sourceTree = "<group>";
+		};
+		890029A22912A1AD00B65DAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				890029A42912A1B600B65DAA /* Response */,
+				890029A32912A1B200B65DAA /* Request */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		890029A32912A1B200B65DAA /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		890029A42912A1B600B65DAA /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		890029A52912A1D500B65DAA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8900296C2912893D00B65DAA /* AppDelegate.swift */,
+				8900296E2912893D00B65DAA /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		890029A62912A1F800B65DAA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				890029752912893F00B65DAA /* Assets.xcassets */,
+				8900297A2912893F00B65DAA /* Info.plist */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		890029A72912A20E00B65DAA /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				890029772912893F00B65DAA /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				890029712912893D00B65DAA /* ViewController.swift in Sources */,
+				890029712912893D00B65DAA /* ExerciseListViewController.swift in Sources */,
 				8900296D2912893D00B65DAA /* AppDelegate.swift in Sources */,
 				8900296F2912893D00B65DAA /* SceneDelegate.swift in Sources */,
 			);
