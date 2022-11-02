@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import Combine
 
 final class ExerciseListViewController: UIViewController {
@@ -66,5 +67,10 @@ extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource
         cell.configureCell(with: viewModel)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let view = UIHostingController(rootView: ExerciseDetailView())
+        navigationController?.pushViewController(view, animated: true)
     }
 }

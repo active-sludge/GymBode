@@ -23,6 +23,7 @@
 		895A45692912F6FB00CBD5F6 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 895A45672912F6FB00CBD5F6 /* ExerciseCell.xib */; };
 		895A456B2912F80C00CBD5F6 /* ExerciseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A456A2912F80C00CBD5F6 /* ExerciseCellViewModel.swift */; };
 		895A457029130E7A00CBD5F6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 895A456F29130E7A00CBD5F6 /* Kingfisher */; };
+		8983FE3329131C800028C4D6 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		895A45662912F6FB00CBD5F6 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		895A45672912F6FB00CBD5F6 /* ExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
 		895A456A2912F80C00CBD5F6 /* ExerciseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModel.swift; sourceTree = "<group>"; };
+		8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		890029A02912A19100B65DAA /* ExerciseDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */,
 			);
 			path = ExerciseDetail;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			files = (
 				890029AB2912AED400B65DAA /* ExerciseService.swift in Sources */,
 				890029712912893D00B65DAA /* ExerciseListViewController.swift in Sources */,
+				8983FE3329131C800028C4D6 /* ExerciseDetailView.swift in Sources */,
 				895A456B2912F80C00CBD5F6 /* ExerciseCellViewModel.swift in Sources */,
 				8900296D2912893D00B65DAA /* AppDelegate.swift in Sources */,
 				890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */,
