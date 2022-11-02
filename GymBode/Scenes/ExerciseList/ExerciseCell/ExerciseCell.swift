@@ -20,7 +20,7 @@ final class ExerciseCell: UITableViewCell {
     @IBOutlet weak var detailDiscloseImageView: UIImageView!
     
     func configureCell(with viewModel: ExerciseCellViewModel) {
-        leftImageView = viewModel.exerciseImage
+        leftImageView.image = viewModel.exerciseImage
         titleLabel.text = viewModel.title
         detailDiscloseImageView.image = UIImage(systemName: "chevron.right")
     }
