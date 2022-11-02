@@ -9,20 +9,17 @@ import UIKit
 
 class ExerciseListViewController: UIViewController {
     
-    @IBAction func fetchButton(_ sender: UIButton) {
+    @IBAction func didTapRefresh(_ sender: UIBarButtonItem) {
         viewModel.fetchExerciseList()
     }
     
     var viewModel: ExerciseListViewModeling = ExerciseListViewModel()
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .purple
-        
-        
+        view.backgroundColor = .cyan
+            
     }
 }
 
