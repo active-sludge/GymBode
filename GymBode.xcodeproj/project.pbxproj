@@ -16,6 +16,7 @@
 		890029842912893F00B65DAA /* GymBodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029832912893F00B65DAA /* GymBodeTests.swift */; };
 		8900298E2912893F00B65DAA /* GymBodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900298D2912893F00B65DAA /* GymBodeUITests.swift */; };
 		890029902912893F00B65DAA /* GymBodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900298F2912893F00B65DAA /* GymBodeUITestsLaunchTests.swift */; };
+		890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029A82912A82300B65DAA /* ExerciseListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		890029892912893F00B65DAA /* GymBodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymBodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8900298D2912893F00B65DAA /* GymBodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymBodeUITests.swift; sourceTree = "<group>"; };
 		8900298F2912893F00B65DAA /* GymBodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymBodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		890029A82912A82300B65DAA /* ExerciseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				890029702912893D00B65DAA /* ExerciseListViewController.swift */,
+				890029A82912A82300B65DAA /* ExerciseListViewModel.swift */,
 			);
 			path = ExerciseList;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			files = (
 				890029712912893D00B65DAA /* ExerciseListViewController.swift in Sources */,
 				8900296D2912893D00B65DAA /* AppDelegate.swift in Sources */,
+				890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */,
 				8900296F2912893D00B65DAA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

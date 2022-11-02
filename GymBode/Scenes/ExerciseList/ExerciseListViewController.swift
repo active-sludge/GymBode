@@ -8,6 +8,7 @@
 import UIKit
 
 class ExerciseListViewController: UIViewController {
+    var viewModel: ExerciseListViewModeling = ExerciseListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
