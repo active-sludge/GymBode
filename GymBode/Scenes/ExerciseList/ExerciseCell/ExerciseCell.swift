@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ExerciseCell: UITableViewCell {
     public static let rowHeight: CGFloat = 120.0
@@ -20,7 +21,8 @@ final class ExerciseCell: UITableViewCell {
     @IBOutlet weak var detailDiscloseImageView: UIImageView!
     
     func configureCell(with viewModel: ExerciseCellViewModel) {
-        leftImageView.image = viewModel.exerciseImage
+        leftImageView.kf.setImage(with: viewModel.exerciseImageURL,
+                                  placeholder: UIImage(systemName: "figure.gymnastics"))
         titleLabel.text = viewModel.title
         detailDiscloseImageView.image = UIImage(systemName: "chevron.right")
     }

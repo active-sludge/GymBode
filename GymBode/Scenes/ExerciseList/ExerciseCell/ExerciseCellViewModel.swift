@@ -8,16 +8,11 @@
 import UIKit
 
 final class ExerciseCellViewModel {
-    let exerciseImage: UIImage
+    let exerciseImageURL: URL?
     let title: String
     
-    init(exerciseImage: UIImage, title: String) {
-        self.exerciseImage = exerciseImage
-        self.title = title
-    }
-    
     init(with model: Exercise) {
-        self.exerciseImage = UIImage(systemName: "figure.gymnastics")!
+        self.exerciseImageURL = URL(string: model.images?.first?.image ?? "")
         self.title = model.name ?? "No title"
     }
 }
