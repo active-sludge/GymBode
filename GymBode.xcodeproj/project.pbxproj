@@ -13,7 +13,6 @@
 		890029742912893D00B65DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890029722912893D00B65DAA /* Main.storyboard */; };
 		890029762912893F00B65DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890029752912893F00B65DAA /* Assets.xcassets */; };
 		890029792912893F00B65DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890029772912893F00B65DAA /* LaunchScreen.storyboard */; };
-		890029842912893F00B65DAA /* GymBodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029832912893F00B65DAA /* GymBodeTests.swift */; };
 		8900298E2912893F00B65DAA /* GymBodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900298D2912893F00B65DAA /* GymBodeUITests.swift */; };
 		890029902912893F00B65DAA /* GymBodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900298F2912893F00B65DAA /* GymBodeUITestsLaunchTests.swift */; };
 		890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029A82912A82300B65DAA /* ExerciseListViewModel.swift */; };
@@ -28,6 +27,8 @@
 		8972B52C2913FE06003B8B41 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B52B2913FE06003B8B41 /* BaseViewController.swift */; };
 		8972B52E2913FE74003B8B41 /* LoadingIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B52D2913FE74003B8B41 /* LoadingIndicatable.swift */; };
 		8972B5322914144E003B8B41 /* AlertViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B5312914144E003B8B41 /* AlertViewPresentable.swift */; };
+		8972B537291431ED003B8B41 /* ExerciseListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B536291431ED003B8B41 /* ExerciseListViewModelTests.swift */; };
+		8972B53A2914320D003B8B41 /* ExerciseCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B5392914320D003B8B41 /* ExerciseCellViewModelTests.swift */; };
 		8983FE3329131C800028C4D6 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +59,6 @@
 		890029782912893F00B65DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8900297A2912893F00B65DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8900297F2912893F00B65DAA /* GymBodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymBodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		890029832912893F00B65DAA /* GymBodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymBodeTests.swift; sourceTree = "<group>"; };
 		890029892912893F00B65DAA /* GymBodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymBodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8900298D2912893F00B65DAA /* GymBodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymBodeUITests.swift; sourceTree = "<group>"; };
 		8900298F2912893F00B65DAA /* GymBodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymBodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -73,6 +73,8 @@
 		8972B52B2913FE06003B8B41 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8972B52D2913FE74003B8B41 /* LoadingIndicatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatable.swift; sourceTree = "<group>"; };
 		8972B5312914144E003B8B41 /* AlertViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewPresentable.swift; sourceTree = "<group>"; };
+		8972B536291431ED003B8B41 /* ExerciseListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModelTests.swift; sourceTree = "<group>"; };
+		8972B5392914320D003B8B41 /* ExerciseCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModelTests.swift; sourceTree = "<group>"; };
 		8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +141,7 @@
 		890029822912893F00B65DAA /* GymBodeTests */ = {
 			isa = PBXGroup;
 			children = (
-				890029832912893F00B65DAA /* GymBodeTests.swift */,
+				8972B533291431CC003B8B41 /* Scenes */,
 			);
 			path = GymBodeTests;
 			sourceTree = "<group>";
@@ -291,6 +293,31 @@
 				8972B5312914144E003B8B41 /* AlertViewPresentable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8972B533291431CC003B8B41 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8972B534291431D0003B8B41 /* ExerciseList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8972B534291431D0003B8B41 /* ExerciseList */ = {
+			isa = PBXGroup;
+			children = (
+				8972B538291431F9003B8B41 /* ExerciseCell */,
+				8972B536291431ED003B8B41 /* ExerciseListViewModelTests.swift */,
+			);
+			path = ExerciseList;
+			sourceTree = "<group>";
+		};
+		8972B538291431F9003B8B41 /* ExerciseCell */ = {
+			isa = PBXGroup;
+			children = (
+				8972B5392914320D003B8B41 /* ExerciseCellViewModelTests.swift */,
+			);
+			path = ExerciseCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,7 +479,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				890029842912893F00B65DAA /* GymBodeTests.swift in Sources */,
+				8972B537291431ED003B8B41 /* ExerciseListViewModelTests.swift in Sources */,
+				8972B53A2914320D003B8B41 /* ExerciseCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ExerciseListResponse: Codable {
-    let exercises: [Exercise]
+public struct ExerciseListResponse: Codable {
+    public let exercises: [Exercise]
     
     enum CodingKeys: String, CodingKey {
         case exercises = "results"
@@ -16,13 +16,13 @@ struct ExerciseListResponse: Codable {
 }
 
 // MARK: - Result
-struct Exercise: Codable {
-    let id: Int?
-    let name: String?
-    let images: [Image]?
-    let variations: [Int]?
+public struct Exercise: Codable {
+    public let id: Int?
+    public let name: String?
+    public let images: [Image]?
+    public let variations: [Int]?
 }
 
-struct Image: Codable {
-    let image: String?
+public struct Image: Codable {
+    public let image: String?
 }
