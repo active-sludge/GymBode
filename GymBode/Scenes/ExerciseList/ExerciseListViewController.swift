@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import Combine
 
 final class ExerciseListViewController: UIViewController {
@@ -30,12 +31,14 @@ final class ExerciseListViewController: UIViewController {
         setupTableView()
     }
     
+    // MARK: - Setup Methods
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ExerciseCell.nib(), forCellReuseIdentifier: ExerciseCell.reuseIdentifier)
     }
     
+    // MARK: - Bindings
     private func setupBindings() {
         viewModel.$exercises
             .receive(on: RunLoop.main)
@@ -66,5 +69,12 @@ extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource
         cell.configureCell(with: viewModel)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = viewModel.exercises[indexPath.row]
+        let viewModel = ExerciseDetailViewModel(with: model)
+        let view = UIHostingController(rootView: ExerciseDetailView(viewModel: viewModel))
+        navigationController?.pushViewController(view, animated: true)
     }
 }
