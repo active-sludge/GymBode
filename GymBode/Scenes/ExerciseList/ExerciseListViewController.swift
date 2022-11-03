@@ -31,12 +31,14 @@ final class ExerciseListViewController: UIViewController {
         setupTableView()
     }
     
+    // MARK: - Setup Methods
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ExerciseCell.nib(), forCellReuseIdentifier: ExerciseCell.reuseIdentifier)
     }
     
+    // MARK: - Bindings
     private func setupBindings() {
         viewModel.$exercises
             .receive(on: RunLoop.main)
