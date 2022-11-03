@@ -183,6 +183,7 @@
 		890029A02912A19100B65DAA /* ExerciseDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8972B5272913F6B2003B8B41 /* View */,
 				8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */,
 				8972B52529132922003B8B41 /* ExerciseDetailViewModel.swift */,
 			);
@@ -247,6 +248,13 @@
 				895A456A2912F80C00CBD5F6 /* ExerciseCellViewModel.swift */,
 			);
 			path = ExerciseCell;
+			sourceTree = "<group>";
+		};
+		8972B5272913F6B2003B8B41 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -12,7 +12,6 @@ struct ExerciseDetailView: View {
     private let columns = [GridItem(.flexible()), GridItem(.flexible())]
     private let rows = [GridItem(.fixed(150))]
     
-    //TODO: - Feed viewModel
     @StateObject var viewModel: ExerciseDetailViewModel
     
     var body: some View {
