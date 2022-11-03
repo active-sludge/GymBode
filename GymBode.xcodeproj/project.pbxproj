@@ -27,6 +27,7 @@
 		8972B52A2913FD35003B8B41 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B5292913FD35003B8B41 /* LoadingIndicator.swift */; };
 		8972B52C2913FE06003B8B41 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B52B2913FE06003B8B41 /* BaseViewController.swift */; };
 		8972B52E2913FE74003B8B41 /* LoadingIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B52D2913FE74003B8B41 /* LoadingIndicatable.swift */; };
+		8972B5322914144E003B8B41 /* AlertViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B5312914144E003B8B41 /* AlertViewPresentable.swift */; };
 		8983FE3329131C800028C4D6 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		8972B5292913FD35003B8B41 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		8972B52B2913FE06003B8B41 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8972B52D2913FE74003B8B41 /* LoadingIndicatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatable.swift; sourceTree = "<group>"; };
+		8972B5312914144E003B8B41 /* AlertViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewPresentable.swift; sourceTree = "<group>"; };
 		8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				8972B52D2913FE74003B8B41 /* LoadingIndicatable.swift */,
+				8972B5312914144E003B8B41 /* AlertViewPresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				895A456B2912F80C00CBD5F6 /* ExerciseCellViewModel.swift in Sources */,
 				8900296D2912893D00B65DAA /* AppDelegate.swift in Sources */,
 				890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */,
+				8972B5322914144E003B8B41 /* AlertViewPresentable.swift in Sources */,
 				890029AD2912B76500B65DAA /* ExerciseListResponse.swift in Sources */,
 				895A45682912F6FB00CBD5F6 /* ExerciseCell.swift in Sources */,
 				8972B52E2913FE74003B8B41 /* LoadingIndicatable.swift in Sources */,

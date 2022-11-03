@@ -27,10 +27,10 @@ final class ExerciseListViewModel {
                 self?.state = .finishedLoading
                 switch completion {
                 case .failure(let error):
-                    print(error)
-                    self?.state = .error(.exerciseListFetchError)
+                    self?.state = .error(message: error.localizedDescription)
                 case .finished:
-                    print("Finished")
+                    /// Include any logic after the request is finished succesfully.
+                    break
                 }
             } receiveValue: { [weak self] response in
                 self?.exercises = response.exercises
@@ -41,14 +41,10 @@ final class ExerciseListViewModel {
 }
 
 extension ExerciseListViewModel {
-    enum ExerciseListViewModelError: Error, Equatable {
-        case exerciseListFetchError
-    }
-    
     enum ExerciseListViewModelStates: Equatable {
         case idle
         case loading
         case finishedLoading
-        case error(ExerciseListViewModelError)
+        case error(message: String)
     }
 }

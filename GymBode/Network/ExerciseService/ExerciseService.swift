@@ -20,8 +20,6 @@ protocol ExerciseServicable {
 }
 
 final class ExerciseService {
-    private var baseURLString: String = "https://wger.de/api/v2/"
-    
     enum Path {
         case exerciseList
         case exerciseDetail(id: Int)
