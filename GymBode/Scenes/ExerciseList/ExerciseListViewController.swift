@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 import Combine
 
-final class ExerciseListViewController: UIViewController {
+final class ExerciseListViewController: BaseViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var tableView: UITableView!
     
@@ -54,9 +54,9 @@ final class ExerciseListViewController: UIViewController {
                 case .idle:
                     break
                 case .loading:
-                    break
+                    self?.startAnimatingLoadingIndicator()
                 case .finishedLoading:
-                    break
+                    self?.stopAnimatingLoadingIndicator()
                 case .error(let error):
                     print(error)
                     break

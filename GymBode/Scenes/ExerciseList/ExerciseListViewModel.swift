@@ -19,12 +19,16 @@ final class ExerciseListViewModel {
     }
     
     func fetchExerciseList() {
+        state = .loading
+        
         service
             .getExerciseList()
-            .sink { completion in
+            .sink { [weak self] completion in
+                self?.state = .finishedLoading
                 switch completion {
                 case .failure(let error):
                     print(error)
+                    self?.state = .error(.exerciseListFetchError)
                 case .finished:
                     print("Finished")
                 }
