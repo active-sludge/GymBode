@@ -8,7 +8,7 @@
 import UIKit
 
 
-class BaseViewController: UIViewController, LoadingIndicatable {
+class BaseViewController: UIViewController, LoadingIndicatable, AlertViewPresentable {
     private (set) lazy var loadingIndicator: LoadingIndicator = LoadingIndicator(style: .medium)
     private var subViews: [UIView] = []
     

@@ -52,14 +52,14 @@ final class ExerciseListViewController: BaseViewController {
             .sink { [weak self] state in
                 switch state {
                 case .idle:
+                    /// Present any view logic when the view is in idle status.
                     break
                 case .loading:
                     self?.startAnimatingLoadingIndicator()
                 case .finishedLoading:
                     self?.stopAnimatingLoadingIndicator()
                 case .error(let error):
-                    print(error)
-                    break
+                    self?.presentAlertView(message: error.description)
                 }
             }
             .store(in: &bindings)
