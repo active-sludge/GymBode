@@ -9,7 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct ExerciseDetailView: View {
-    private let columns = [GridItem(.flexible()), GridItem(.flexible())]
     private let rows = [GridItem(.fixed(150))]
     
     @StateObject var viewModel: ExerciseDetailViewModel
@@ -47,27 +46,16 @@ struct ExerciseDetailView: View {
                     .fill()
                     .frame(height: 8.0)
                 
-                HStack {
-                    Text("Variations")
-                        .font(.title2)
-                    Spacer()
-                }
-                
-                LazyVGrid(columns: columns, spacing: 16.0) {
-                    // TODO: - Feed Variations
-                    ForEach($viewModel.variations,
-                            id: \.self) { _ in
-                        VStack {
-                            SwiftUI.Image(systemName: "figure.gymnastics")
-                                .resizable()
-                                .frame(width: 50.0, height: 50.0)
-                                .font(.largeTitle)
-                                .foregroundColor(.purple)
-                            Text("Variation Title")
-                        }
-                        
+                VStack(alignment: .trailing, spacing: 16.0, content: {
+                    HStack {
+                        Text("Variations")
+                            .font(.title.bold())
                     }
-                }
+                    
+                    ForEach(viewModel.variations, id: \.self) { variationID in
+                        Text("Variation \(variationID)")
+                    }
+                })
             }
         }.padding()
     }
@@ -86,7 +74,8 @@ struct ExerciseDetailView_Previews: PreviewProvider {
                                 53,
                                 66,
                                 241,
-                                266])
+                                266
+                             ])
         let viewModel = ExerciseDetailViewModel(with: model)
         
         ExerciseDetailView(viewModel: viewModel)
