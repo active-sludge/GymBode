@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 import Combine
 
-final class ExerciseListViewController: UIViewController {
+final class ExerciseListViewController: BaseViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var tableView: UITableView!
     
@@ -45,6 +45,23 @@ final class ExerciseListViewController: UIViewController {
             .sink(receiveValue: { [weak self] _ in
                 self?.tableView.reloadData()
             })
+            .store(in: &bindings)
+        
+        viewModel.$state
+            .receive(on: RunLoop.main)
+            .sink { [weak self] state in
+                switch state {
+                case .idle:
+                    break
+                case .loading:
+                    self?.startAnimatingLoadingIndicator()
+                case .finishedLoading:
+                    self?.stopAnimatingLoadingIndicator()
+                case .error(let error):
+                    print(error)
+                    break
+                }
+            }
             .store(in: &bindings)
     }
 }

@@ -12,18 +12,23 @@ final class ExerciseListViewModel {
     private let service: ExerciseServicable
     
     @Published var exercises: [Exercise] = []
+    @Published var state: ExerciseListViewModelStates = .idle
     
     init(service: ExerciseServicable = ExerciseService()) {
         self.service = service
     }
     
     func fetchExerciseList() {
+        state = .loading
+        
         service
             .getExerciseList()
-            .sink { completion in
+            .sink { [weak self] completion in
+                self?.state = .finishedLoading
                 switch completion {
                 case .failure(let error):
                     print(error)
+                    self?.state = .error(.exerciseListFetchError)
                 case .finished:
                     print("Finished")
                 }
@@ -32,5 +37,18 @@ final class ExerciseListViewModel {
             }
             .store(in: &bindings)
 
+    }
+}
+
+extension ExerciseListViewModel {
+    enum ExerciseListViewModelError: Error, Equatable {
+        case exerciseListFetchError
+    }
+    
+    enum ExerciseListViewModelStates: Equatable {
+        case idle
+        case loading
+        case finishedLoading
+        case error(ExerciseListViewModelError)
     }
 }
