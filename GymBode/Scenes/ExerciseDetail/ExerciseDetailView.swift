@@ -9,8 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct ExerciseDetailView: View {
-    private let rows = [GridItem(.fixed(150))]
-    
     @StateObject var viewModel: ExerciseDetailViewModel
     
     var body: some View {
@@ -18,26 +16,7 @@ struct ExerciseDetailView: View {
             VStack(alignment: .center,
                    spacing: 32.0) {
                 
-                if viewModel.imageURLs.isEmpty {
-                    SwiftUI.Image(systemName: "figure.gymnastics")
-                        .resizable()
-                        .frame(width: 250.0, height: 250.0)
-                        .font(.largeTitle)
-                        .foregroundColor(.purple)
-                } else {
-                    ScrollView(.horizontal,
-                               showsIndicators: false) {
-                        LazyHGrid(rows: rows, spacing: 16.0) {
-                            ForEach(viewModel.imageURLs.indices,
-                                    id: \.self) { index in
-                                KFImage.url(URL(string: viewModel.imageURLs[index]))
-                                    .resizable()
-                                    .frame(width: 250.0,
-                                           height: 250.0)
-                            }
-                        }
-                    }.padding()
-                }
+                ImageSectionView(imageURLs: viewModel.imageURLs)
                 
                 Text(viewModel.title)
                     .font(.largeTitle.bold())
@@ -46,16 +25,7 @@ struct ExerciseDetailView: View {
                     .fill()
                     .frame(height: 8.0)
                 
-                VStack(alignment: .trailing, spacing: 16.0, content: {
-                    HStack {
-                        Text("Variations")
-                            .font(.title.bold())
-                    }
-                    
-                    ForEach(viewModel.variations, id: \.self) { variationID in
-                        Text("Variation \(variationID)")
-                    }
-                })
+                VariationsSectionView(variations: viewModel.variations)
             }
         }.padding()
     }

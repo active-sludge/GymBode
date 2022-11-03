@@ -29,6 +29,8 @@
 		8972B5322914144E003B8B41 /* AlertViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B5312914144E003B8B41 /* AlertViewPresentable.swift */; };
 		8972B537291431ED003B8B41 /* ExerciseListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B536291431ED003B8B41 /* ExerciseListViewModelTests.swift */; };
 		8972B53A2914320D003B8B41 /* ExerciseCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B5392914320D003B8B41 /* ExerciseCellViewModelTests.swift */; };
+		8972B53C29148150003B8B41 /* ImageSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B53B29148150003B8B41 /* ImageSectionView.swift */; };
+		8972B53E291481E4003B8B41 /* VariationsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972B53D291481E4003B8B41 /* VariationsSectionView.swift */; };
 		8983FE3329131C800028C4D6 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		8972B5312914144E003B8B41 /* AlertViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewPresentable.swift; sourceTree = "<group>"; };
 		8972B536291431ED003B8B41 /* ExerciseListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModelTests.swift; sourceTree = "<group>"; };
 		8972B5392914320D003B8B41 /* ExerciseCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModelTests.swift; sourceTree = "<group>"; };
+		8972B53B29148150003B8B41 /* ImageSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSectionView.swift; sourceTree = "<group>"; };
+		8972B53D291481E4003B8B41 /* VariationsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationsSectionView.swift; sourceTree = "<group>"; };
 		8983FE3229131C800028C4D6 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,6 +270,8 @@
 		8972B5272913F6B2003B8B41 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8972B53B29148150003B8B41 /* ImageSectionView.swift */,
+				8972B53D291481E4003B8B41 /* VariationsSectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -462,7 +468,9 @@
 				890029AB2912AED400B65DAA /* ExerciseService.swift in Sources */,
 				8972B52629132922003B8B41 /* ExerciseDetailViewModel.swift in Sources */,
 				890029712912893D00B65DAA /* ExerciseListViewController.swift in Sources */,
+				8972B53C29148150003B8B41 /* ImageSectionView.swift in Sources */,
 				8983FE3329131C800028C4D6 /* ExerciseDetailView.swift in Sources */,
+				8972B53E291481E4003B8B41 /* VariationsSectionView.swift in Sources */,
 				8972B52C2913FE06003B8B41 /* BaseViewController.swift in Sources */,
 				895A456B2912F80C00CBD5F6 /* ExerciseCellViewModel.swift in Sources */,
 				8900296D2912893D00B65DAA /* AppDelegate.swift in Sources */,
