@@ -7,26 +7,34 @@
 
 import UIKit
 
-
 class BaseViewController: UIViewController, LoadingIndicatable, AlertViewPresentable {
+    // MARK: - Properties
     private (set) lazy var loadingIndicator: LoadingIndicator = LoadingIndicator(style: .medium)
-    private var subViews: [UIView] = []
+    private var subviewList: [UIView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
-        setupLoadingIndicator()
+        setupSubviewConstraints()
     }
     
+    // MARK: - Setup Sub Views
     private func setupSubviews() {
-        subViews.append(loadingIndicator)
-        subViews.forEach {
+        /// Just append any custom views to subviewList below.
+        subviewList.append(loadingIndicator)
+        
+        subviewList.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
     }
     
-    private func setupLoadingIndicator() {
+    ///
+    private func setupSubviewConstraints() {
+        setupLoadingIndicatorConstraints()
+    }
+    
+    private func setupLoadingIndicatorConstraints() {
         NSLayoutConstraint.activate([
             loadingIndicator.widthAnchor.constraint(equalToConstant: 50.0),
             loadingIndicator.heightAnchor.constraint(equalToConstant: 50.0),
