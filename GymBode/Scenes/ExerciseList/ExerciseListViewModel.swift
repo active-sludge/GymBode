@@ -12,6 +12,7 @@ final class ExerciseListViewModel {
     private let service: ExerciseServicable
     
     @Published var exercises: [Exercise] = []
+    @Published var state: ExerciseListViewModelStates = .idle
     
     init(service: ExerciseServicable = ExerciseService()) {
         self.service = service
@@ -32,5 +33,18 @@ final class ExerciseListViewModel {
             }
             .store(in: &bindings)
 
+    }
+}
+
+extension ExerciseListViewModel {
+    enum ExerciseListViewModelError: Error, Equatable {
+        case exerciseListFetchError
+    }
+    
+    enum ExerciseListViewModelStates: Equatable {
+        case idle
+        case loading
+        case finishedLoading
+        case error(ExerciseListViewModelError)
     }
 }

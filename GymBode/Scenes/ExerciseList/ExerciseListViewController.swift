@@ -46,6 +46,23 @@ final class ExerciseListViewController: UIViewController {
                 self?.tableView.reloadData()
             })
             .store(in: &bindings)
+        
+        viewModel.$state
+            .receive(on: RunLoop.main)
+            .sink { [weak self] state in
+                switch state {
+                case .idle:
+                    break
+                case .loading:
+                    break
+                case .finishedLoading:
+                    break
+                case .error(let error):
+                    print(error)
+                    break
+                }
+            }
+            .store(in: &bindings)
     }
 }
 
