@@ -24,6 +24,7 @@ class BaseService: Requestable {
             .mapError({ error in
                 NetworkError.unableToParseJSON(error.localizedDescription)
             })
+            .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }
 }

@@ -25,7 +25,7 @@ struct ExerciseDetailView: View {
                     .fill()
                     .frame(height: 8.0)
                 
-                VariationsSectionView(variations: viewModel.variations)
+                VariationsSectionView(viewModel: .init(variations: viewModel.variations))
             }
         }.padding()
     }
