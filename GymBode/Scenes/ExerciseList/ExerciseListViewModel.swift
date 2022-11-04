@@ -21,22 +21,20 @@ final class ExerciseListViewModel {
     func fetchExerciseList() {
         state = .loading
         
-//        service
-//            .getExerciseList()
-//            .sink { [weak self] completion in
-//                self?.state = .finishedLoading
-//                switch completion {
-//                case .failure(let error):
-//                    self?.state = .error(message: error.localizedDescription)
-//                case .finished:
-//                    /// Include any logic after the request is finished succesfully.
-//                    break
-//                }
-//            } receiveValue: { [weak self] response in
-//                self?.exercises = response.exercises
-//            }
-//            .store(in: &bindings)
-
+        service.getExerciseList()
+            .sink { [weak self] completion in
+                self?.state = .finishedLoading
+                switch completion {
+                case .failure(let error):
+                    self?.state = .error(message: error.localizedDescription)
+                case .finished:
+                    /// Include any logic after the request is finished succesfully.
+                    break
+                }
+            } receiveValue: { [weak self] response in
+                self?.exercises = response.exercises
+            }
+            .store(in: &bindings)
     }
 }
 

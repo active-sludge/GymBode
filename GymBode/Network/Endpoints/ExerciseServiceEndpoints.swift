@@ -22,9 +22,9 @@ extension ExerciseServiceEndpoints {
     var urlString: String {
         switch self {
         case .getExerciseList:
-            return "/exerciseinfo"
+            return "\(baseURL)/exerciseinfo"
         case .getExerciseDetail(let id):
-            return "/exerciseinfo/\(id)"
+            return "\(baseURL)/exerciseinfo/\(id)"
         }
     }
     
