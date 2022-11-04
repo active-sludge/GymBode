@@ -23,7 +23,7 @@ public struct NetworkRequest {
 /// Can be extended with error types.
 public enum NetworkError: Error, Equatable {
     case badURL(_ error: String)
-    case unableToParseData(_ error: String)
+    case unableToParseJSON(_ error: String)
     case unknown(code: Int, error: String)
 }
 

@@ -18,6 +18,12 @@ class BaseService: Requestable {
             return AnyPublisher(Fail<T, NetworkError>(error: NetworkError.badURL("Invalid Url")))
         }
         
-        return AnyPublisher(Fail(error: .unknown(code: 1, error: "Not implemented yet.")))
+        return URLSession.shared.dataTaskPublisher(for: req.buildURLRequest(with: url))
+            .map(\.data)
+            .decode(type: T.self, decoder: JSONDecoder())
+            .mapError({ error in
+                NetworkError.unableToParseJSON(error.localizedDescription)
+            })
+            .eraseToAnyPublisher()
     }
 }
