@@ -9,9 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct ExerciseDetailView: View {
-    private let columns = [GridItem(.flexible()), GridItem(.flexible())]
-    private let rows = [GridItem(.fixed(150))]
-    
     @StateObject var viewModel: ExerciseDetailViewModel
     
     var body: some View {
@@ -19,26 +16,7 @@ struct ExerciseDetailView: View {
             VStack(alignment: .center,
                    spacing: 32.0) {
                 
-                if viewModel.imageURLs.isEmpty {
-                    SwiftUI.Image(systemName: "figure.gymnastics")
-                        .resizable()
-                        .frame(width: 250.0, height: 250.0)
-                        .font(.largeTitle)
-                        .foregroundColor(.purple)
-                } else {
-                    ScrollView(.horizontal,
-                               showsIndicators: false) {
-                        LazyHGrid(rows: rows, spacing: 16.0) {
-                            ForEach(viewModel.imageURLs.indices,
-                                    id: \.self) { index in
-                                KFImage.url(URL(string: viewModel.imageURLs[index]))
-                                    .resizable()
-                                    .frame(width: 250.0,
-                                           height: 250.0)
-                            }
-                        }
-                    }.padding()
-                }
+                ImageSectionView(imageURLs: viewModel.imageURLs)
                 
                 Text(viewModel.title)
                     .font(.largeTitle.bold())
@@ -47,27 +25,7 @@ struct ExerciseDetailView: View {
                     .fill()
                     .frame(height: 8.0)
                 
-                HStack {
-                    Text("Variations")
-                        .font(.title2)
-                    Spacer()
-                }
-                
-                LazyVGrid(columns: columns, spacing: 16.0) {
-                    // TODO: - Feed Variations
-                    ForEach($viewModel.variations,
-                            id: \.self) { _ in
-                        VStack {
-                            SwiftUI.Image(systemName: "figure.gymnastics")
-                                .resizable()
-                                .frame(width: 50.0, height: 50.0)
-                                .font(.largeTitle)
-                                .foregroundColor(.purple)
-                            Text("Variation Title")
-                        }
-                        
-                    }
-                }
+                VariationsSectionView(variations: viewModel.variations)
             }
         }.padding()
     }
@@ -86,7 +44,8 @@ struct ExerciseDetailView_Previews: PreviewProvider {
                                 53,
                                 66,
                                 241,
-                                266])
+                                266
+                             ])
         let viewModel = ExerciseDetailViewModel(with: model)
         
         ExerciseDetailView(viewModel: viewModel)

@@ -21,8 +21,7 @@ final class ExerciseListViewModel {
     func fetchExerciseList() {
         state = .loading
         
-        service
-            .getExerciseList()
+        service.getExerciseList()
             .sink { [weak self] completion in
                 self?.state = .finishedLoading
                 switch completion {
@@ -36,7 +35,6 @@ final class ExerciseListViewModel {
                 self?.exercises = response.exercises
             }
             .store(in: &bindings)
-
     }
 }
 
