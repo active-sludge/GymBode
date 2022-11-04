@@ -77,7 +77,7 @@ extension ExerciseService: ExerciseServicable {
         }
         .handleEvents(receiveSubscription: onSubscription,
                       receiveCancel: onCancel)
-        .receive(on: DispatchQueue.main)
+        .receive(on: DispatchQueue.global())
         .eraseToAnyPublisher()
         
     }
