@@ -9,17 +9,24 @@ import Foundation
 import Combine
 
 protocol ExerciseServicable {
-    func getExerciseList() // -> AnyPublisher<ExerciseListResponse, Error>
-    func getExerciseDetail(with id: Int) // -> AnyPublisher<Exercise, Error>
+    func getExerciseList() -> AnyPublisher<ExerciseListResponse, NetworkError>
+    func getExerciseDetail(with id: Int) // -> AnyPublisher<Exercise, NetworkError>
 }
 
 final class ExerciseService: ExerciseServicable {
+    let service: Requestable
     
-    func getExerciseList() { // -> AnyPublisher<ExerciseListResponse, Error> {
-        // TODO: - call base service
+    init(service: Requestable = BaseService()) {
+        self.service = service
     }
     
-    func getExerciseDetail(with id: Int) { // -> AnyPublisher<Exercise, Error> {
+    func getExerciseList() -> AnyPublisher<ExerciseListResponse, NetworkError> {
+        // TODO: - call base service
+        let request = ExerciseServiceEndpoints.getExerciseList.request
+        return service.request(request)
+    }
+    
+    func getExerciseDetail(with id: Int) { // -> AnyPublisher<Exercise, NetworkError> {
         // TODO: - call base service
     }
 }

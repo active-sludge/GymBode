@@ -18,6 +18,7 @@ extension ExerciseServiceEndpoints {
         "https://wger.de/api/v2"
     }
     
+    /// Returns the endpoint of selected endpoint
     var urlString: String {
         switch self {
         case .getExerciseList:
@@ -25,5 +26,10 @@ extension ExerciseServiceEndpoints {
         case .getExerciseDetail(let id):
             return "/exerciseinfo/\(id)"
         }
+    }
+    
+    /// Returns a network request from the given urlString
+    var request: NetworkRequest {
+        return NetworkRequest(url: urlString)
     }
 }
