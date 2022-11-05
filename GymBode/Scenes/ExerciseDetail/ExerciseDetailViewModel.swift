@@ -26,6 +26,8 @@ class ExerciseDetailViewModel: ObservableObject {
         }
     }
     
+    private (set) var errorMessage: String?
+    
     init(id: Int, service: ExerciseServicable = ExerciseService()) {
         self.id = id
         self.service = service
@@ -33,13 +35,13 @@ class ExerciseDetailViewModel: ObservableObject {
     
     func getExerciseDetail(with id: Int) {
         state = .loading
-        
         service.getExerciseDetail(with: id)
             .sink { [weak self] completion in
                 self?.state = .finishedLoading
                 switch completion {
                 case .failure(let error):
-                    self?.state = .error(message: error.localizedDescription)
+                    self?.errorMessage = error.localizedDescription
+                    self?.state = .error
                 case .finished:
                     /// Include any logic after the request is finished succesfully.
                     break
@@ -56,6 +58,6 @@ extension ExerciseDetailViewModel {
         case idle
         case loading
         case finishedLoading
-        case error(message: String)
+        case error
     }
 }

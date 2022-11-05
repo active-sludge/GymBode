@@ -10,6 +10,7 @@ import Kingfisher
 
 struct ExerciseDetailView: View {
     @StateObject var viewModel: ExerciseDetailViewModel
+    @State var showAlert: Bool = false
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -33,16 +34,21 @@ struct ExerciseDetailView: View {
                         .frame(height: 8.0)
                     
                     VariationsSectionView(viewModel: .init(variations: viewModel.variations))
-                case .error(message: let message):
-                    Text(message)
-                        .frame(alignment: .center)
+                case .error:
+                    EmptyView()
+                        .onAppear {
+                            showAlert = true
+                        }
                 }
-
             }
-        }
-        .padding()
-        .onAppear {
-            viewModel.getExerciseDetail(with: viewModel.id)
+                   .padding()
+                   .onAppear {
+                       viewModel.getExerciseDetail(with: viewModel.id)
+                   }
+                   .alert(isPresented: $showAlert) {
+                       Alert(title: Text("Alert"),
+                             message: Text(viewModel.errorMessage ?? "Error loading detail."))
+                   }
         }
     }
 }
