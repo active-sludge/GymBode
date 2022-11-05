@@ -19,8 +19,8 @@ struct VariationsSectionView: View {
                 }
                 
                 ForEach(viewModel.variations, id: \.self) { variationID in
-                    Button("Variation \(variationID)") {
-                        viewModel.getExerciseDetail(id: variationID)
+                    NavigationLink("Variation \(variationID)") {
+                        ExerciseDetailView(viewModel: .init(id: variationID))
                     }
                 }
             })

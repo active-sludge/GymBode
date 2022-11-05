@@ -15,19 +15,35 @@ struct ExerciseDetailView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .center,
                    spacing: 32.0) {
-                
-                ImageSectionView(imageURLs: viewModel.imageURLs)
-                
-                Text(viewModel.title)
-                    .font(.largeTitle.bold())
-                
-                Capsule()
-                    .fill()
-                    .frame(height: 8.0)
-                
-                VariationsSectionView(viewModel: .init(variations: viewModel.variations))
+                switch viewModel.state {
+                case .idle:
+                    /// Configure further for idle state
+                    EmptyView()
+                case .loading:
+                    ProgressView()
+                        .frame(alignment: .center)
+                case .finishedLoading:
+                    ImageSectionView(imageURLs: viewModel.imageURLs )
+                    
+                    Text(viewModel.title)
+                        .font(.largeTitle.bold())
+                    
+                    Capsule()
+                        .fill()
+                        .frame(height: 8.0)
+                    
+                    VariationsSectionView(viewModel: .init(variations: viewModel.variations))
+                case .error(message: let message):
+                    Text(message)
+                        .frame(alignment: .center)
+                }
+
             }
-        }.padding()
+        }
+        .padding()
+        .onAppear {
+            viewModel.getExerciseDetail(with: viewModel.id)
+        }
     }
 }
 
@@ -46,7 +62,7 @@ struct ExerciseDetailView_Previews: PreviewProvider {
                                 241,
                                 266
                              ])
-        let viewModel = ExerciseDetailViewModel(with: model)
+        let viewModel = ExerciseDetailViewModel(id: model.id!)
         
         ExerciseDetailView(viewModel: viewModel)
     }
