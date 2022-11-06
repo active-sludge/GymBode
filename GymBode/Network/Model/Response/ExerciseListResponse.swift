@@ -15,7 +15,6 @@ public struct ExerciseListResponse: Codable {
     }
 }
 
-// MARK: - Result
 public struct Exercise: Codable {
     public let id: Int?
     public let name: String?
