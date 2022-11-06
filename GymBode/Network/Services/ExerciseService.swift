@@ -10,7 +10,7 @@ import Combine
 
 protocol ExerciseServicable {
     func getExerciseList() -> AnyPublisher<ExerciseListResponse, NetworkError>
-    func getExerciseDetail(with id: Int) // -> AnyPublisher<Exercise, NetworkError>
+    func getExerciseDetail(with id: Int) -> AnyPublisher<Exercise, NetworkError>
 }
 
 final class ExerciseService: ExerciseServicable {
@@ -26,7 +26,9 @@ final class ExerciseService: ExerciseServicable {
         return service.request(endpoint)
     }
     
-    func getExerciseDetail(with id: Int) { // -> AnyPublisher<Exercise, NetworkError> {
+    func getExerciseDetail(with id: Int) -> AnyPublisher<Exercise, NetworkError> {
         // TODO: - call base service
+        let endpoint = ExerciseServiceApi.getExerciseDetail(id: id)
+        return service.request(endpoint)
     }
 }

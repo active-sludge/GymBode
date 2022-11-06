@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VariationsSectionView: View {
-    var variations: [Int]
+    @ObservedObject var viewModel: VariationsSectionViewModel
     
     var body: some View {
         HStack {
@@ -18,10 +18,9 @@ struct VariationsSectionView: View {
                         .font(.title.bold())
                 }
                 
-                ForEach(variations, id: \.self) { variationID in
+                ForEach(viewModel.variations, id: \.self) { variationID in
                     NavigationLink("Variation \(variationID)") {
-                        // Push new variation detail
-                        Text("Variation")
+                        ExerciseDetailView(viewModel: .init(id: variationID))
                     }
                 }
             })
@@ -32,12 +31,13 @@ struct VariationsSectionView: View {
 
 struct VariationsSectionView_Previews: PreviewProvider {
     static var previews: some View {
-        VariationsSectionView(variations: [
+        let viewModel = VariationsSectionViewModel(variations: [
             228,
             53,
             66,
             241,
             266
-        ]).padding()
+        ])
+        VariationsSectionView(viewModel: viewModel).padding()
     }
 }

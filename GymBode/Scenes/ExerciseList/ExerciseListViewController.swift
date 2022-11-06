@@ -89,8 +89,8 @@ extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = viewModel.exercises[indexPath.row]
-        let viewModel = ExerciseDetailViewModel(with: model)
+        guard let id = viewModel.exercises[indexPath.row].id else { return }
+        let viewModel = ExerciseDetailViewModel(id: id)
         let view = UIHostingController(rootView: ExerciseDetailView(viewModel: viewModel))
         navigationController?.pushViewController(view, animated: true)
     }
