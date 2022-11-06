@@ -20,8 +20,8 @@
 		890029AD2912B76500B65DAA /* ExerciseListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890029AC2912B76500B65DAA /* ExerciseListResponse.swift */; };
 		89189A6829159AFB002EDD3C /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A6729159AFB002EDD3C /* BaseService.swift */; };
 		89189A6B29159DD1002EDD3C /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A6A29159DD1002EDD3C /* NetworkRequest.swift */; };
-		89189A6E2915A5DF002EDD3C /* ExerciseServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A6D2915A5DF002EDD3C /* ExerciseServiceApi.swift */; };
-		89189A752915BB87002EDD3C /* Endpointable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A742915BB87002EDD3C /* Endpointable.swift */; };
+		89189A6E2915A5DF002EDD3C /* ExerciseApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A6D2915A5DF002EDD3C /* ExerciseApiTarget.swift */; };
+		89189A752915BB87002EDD3C /* ApiTargetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A742915BB87002EDD3C /* ApiTargetable.swift */; };
 		89189A772915CF4A002EDD3C /* VariationsSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A762915CF4A002EDD3C /* VariationsSectionViewModel.swift */; };
 		895A45682912F6FB00CBD5F6 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A45662912F6FB00CBD5F6 /* ExerciseCell.swift */; };
 		895A45692912F6FB00CBD5F6 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 895A45672912F6FB00CBD5F6 /* ExerciseCell.xib */; };
@@ -74,8 +74,8 @@
 		890029AC2912B76500B65DAA /* ExerciseListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListResponse.swift; sourceTree = "<group>"; };
 		89189A6729159AFB002EDD3C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		89189A6A29159DD1002EDD3C /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		89189A6D2915A5DF002EDD3C /* ExerciseServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseServiceApi.swift; sourceTree = "<group>"; };
-		89189A742915BB87002EDD3C /* Endpointable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpointable.swift; sourceTree = "<group>"; };
+		89189A6D2915A5DF002EDD3C /* ExerciseApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseApiTarget.swift; sourceTree = "<group>"; };
+		89189A742915BB87002EDD3C /* ApiTargetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTargetable.swift; sourceTree = "<group>"; };
 		89189A762915CF4A002EDD3C /* VariationsSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationsSectionViewModel.swift; sourceTree = "<group>"; };
 		895A45662912F6FB00CBD5F6 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		895A45672912F6FB00CBD5F6 /* ExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
@@ -142,12 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				8972B5282913FC13003B8B41 /* CustomComponents */,
-				890029A62912A1F800B65DAA /* Resources */,
 				890029A52912A1D500B65DAA /* Delegates */,
-				8900299E2912A18400B65DAA /* Utility */,
 				8900299D2912A17F00B65DAA /* Network */,
+				890029A62912A1F800B65DAA /* Resources */,
 				8900299C2912A17A00B65DAA /* Scenes */,
-				890029722912893D00B65DAA /* Main.storyboard */,
+				8900299E2912A18400B65DAA /* Utility */,
 			);
 			path = GymBode;
 			sourceTree = "<group>";
@@ -172,9 +171,10 @@
 		8900299C2912A17A00B65DAA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				890029A72912A20E00B65DAA /* LaunchScreen */,
+				890029722912893D00B65DAA /* Main.storyboard */,
 				890029A02912A19100B65DAA /* ExerciseDetail */,
 				8900299F2912A18800B65DAA /* ExerciseList */,
+				890029A72912A20E00B65DAA /* LaunchScreen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -182,11 +182,11 @@
 		8900299D2912A17F00B65DAA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				89189A6F2915AF2E002EDD3C /* StubData */,
-				89189A6C2915A5C5002EDD3C /* Endpoints */,
 				89189A6929159DB5002EDD3C /* Base */,
+				89189A6C2915A5C5002EDD3C /* ApiTargets */,
 				890029A22912A1AD00B65DAA /* Model */,
 				890029A12912A1A000B65DAA /* Services */,
+				89189A6F2915AF2E002EDD3C /* StubData */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -274,18 +274,18 @@
 			isa = PBXGroup;
 			children = (
 				89189A6729159AFB002EDD3C /* BaseService.swift */,
+				89189A742915BB87002EDD3C /* ApiTargetable.swift */,
 				89189A6A29159DD1002EDD3C /* NetworkRequest.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
 		};
-		89189A6C2915A5C5002EDD3C /* Endpoints */ = {
+		89189A6C2915A5C5002EDD3C /* ApiTargets */ = {
 			isa = PBXGroup;
 			children = (
-				89189A6D2915A5DF002EDD3C /* ExerciseServiceApi.swift */,
-				89189A742915BB87002EDD3C /* Endpointable.swift */,
+				89189A6D2915A5DF002EDD3C /* ExerciseApiTarget.swift */,
 			);
-			path = Endpoints;
+			path = ApiTargets;
 			sourceTree = "<group>";
 		};
 		89189A6F2915AF2E002EDD3C /* StubData */ = {
@@ -507,13 +507,13 @@
 				890029AB2912AED400B65DAA /* ExerciseService.swift in Sources */,
 				8972B52629132922003B8B41 /* ExerciseDetailViewModel.swift in Sources */,
 				890029712912893D00B65DAA /* ExerciseListViewController.swift in Sources */,
-				89189A6E2915A5DF002EDD3C /* ExerciseServiceApi.swift in Sources */,
+				89189A6E2915A5DF002EDD3C /* ExerciseApiTarget.swift in Sources */,
 				8972B53C29148150003B8B41 /* ImageSectionView.swift in Sources */,
 				8983FE3329131C800028C4D6 /* ExerciseDetailView.swift in Sources */,
 				8972B53E291481E4003B8B41 /* VariationsSectionView.swift in Sources */,
 				8972B52C2913FE06003B8B41 /* BaseViewController.swift in Sources */,
 				895A456B2912F80C00CBD5F6 /* ExerciseCellViewModel.swift in Sources */,
-				89189A752915BB87002EDD3C /* Endpointable.swift in Sources */,
+				89189A752915BB87002EDD3C /* ApiTargetable.swift in Sources */,
 				8900296D2912893D00B65DAA /* AppDelegate.swift in Sources */,
 				890029A92912A82300B65DAA /* ExerciseListViewModel.swift in Sources */,
 				8972B5322914144E003B8B41 /* AlertViewPresentable.swift in Sources */,

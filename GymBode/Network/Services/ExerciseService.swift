@@ -22,13 +22,13 @@ final class ExerciseService: ExerciseServicable {
     
     func getExerciseList() -> AnyPublisher<ExerciseListResponse, NetworkError> {
         // TODO: - call base service
-        let endpoint = ExerciseServiceApi.getExerciseList
+        let endpoint = ExerciseApiTarget.getExerciseList
         return service.request(endpoint)
     }
     
     func getExerciseDetail(with id: Int) -> AnyPublisher<Exercise, NetworkError> {
         // TODO: - call base service
-        let endpoint = ExerciseServiceApi.getExerciseDetail(id: id)
+        let endpoint = ExerciseApiTarget.getExerciseDetail(id: id)
         return service.request(endpoint)
     }
 }

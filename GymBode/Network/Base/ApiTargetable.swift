@@ -7,14 +7,14 @@
 
 import Foundation
 
-public protocol Endpointable {
+public protocol ApiTargetable {
     var baseURL: String { get }
     var endpoint: String { get }
     var fullURL: String { get }
     var request: NetworkRequest { get }
 }
 
-public extension Endpointable {
+public extension ApiTargetable {
     var fullURL: String {
         baseURL + endpoint
     }

@@ -26,13 +26,3 @@ public enum NetworkError: Error, Equatable {
     case unableToParseJSON(_ error: String)
     case unknown(code: Int, error: String)
 }
-
-extension Encodable {
-    func encode() -> Data? {
-        do {
-            return try JSONEncoder().encode(self)
-        } catch {
-            return nil
-        }
-    }
-}

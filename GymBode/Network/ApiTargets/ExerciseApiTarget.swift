@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum ExerciseServiceApi {
+enum ExerciseApiTarget {
     case getExerciseList
     case getExerciseDetail(id: Int)
 }
 
-extension ExerciseServiceApi: Endpointable {
+extension ExerciseApiTarget: ApiTargetable {
     // Can be extended by introducing environment as a variable
     var baseURL: String {
         "https://wger.de/api/v2/"
