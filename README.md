@@ -34,6 +34,7 @@ Browse exercises, see details and variations.
 - Swift > 5.0
 
 ## External Libraries
+Swift Package Manager is used. Libraries below should be readily available once you clone the repo and fetch once you run the project.
 
 - Kingfisher
 
