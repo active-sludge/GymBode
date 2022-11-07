@@ -23,6 +23,11 @@
 		89189A6E2915A5DF002EDD3C /* ExerciseApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A6D2915A5DF002EDD3C /* ExerciseApiTarget.swift */; };
 		89189A752915BB87002EDD3C /* ApiTargetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A742915BB87002EDD3C /* ApiTargetable.swift */; };
 		89189A772915CF4A002EDD3C /* VariationsSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89189A762915CF4A002EDD3C /* VariationsSectionViewModel.swift */; };
+		89589D7B291906C900F82BFC /* MockExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589D7A291906C900F82BFC /* MockExerciseService.swift */; };
+		89589D802919086500F82BFC /* getExerciseDetail15.json in Resources */ = {isa = PBXBuildFile; fileRef = 89589D7D2919086500F82BFC /* getExerciseDetail15.json */; };
+		89589D812919086500F82BFC /* getExerciseDetail77.json in Resources */ = {isa = PBXBuildFile; fileRef = 89589D7E2919086500F82BFC /* getExerciseDetail77.json */; };
+		89589D822919086500F82BFC /* getExercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 89589D7F2919086500F82BFC /* getExercises.json */; };
+		89589D842919098F00F82BFC /* ExerciseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589D832919098F00F82BFC /* ExerciseServiceTests.swift */; };
 		895A45682912F6FB00CBD5F6 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A45662912F6FB00CBD5F6 /* ExerciseCell.swift */; };
 		895A45692912F6FB00CBD5F6 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 895A45672912F6FB00CBD5F6 /* ExerciseCell.xib */; };
 		895A456B2912F80C00CBD5F6 /* ExerciseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A456A2912F80C00CBD5F6 /* ExerciseCellViewModel.swift */; };
@@ -77,6 +82,11 @@
 		89189A6D2915A5DF002EDD3C /* ExerciseApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseApiTarget.swift; sourceTree = "<group>"; };
 		89189A742915BB87002EDD3C /* ApiTargetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTargetable.swift; sourceTree = "<group>"; };
 		89189A762915CF4A002EDD3C /* VariationsSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationsSectionViewModel.swift; sourceTree = "<group>"; };
+		89589D7A291906C900F82BFC /* MockExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExerciseService.swift; sourceTree = "<group>"; };
+		89589D7D2919086500F82BFC /* getExerciseDetail15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getExerciseDetail15.json; sourceTree = "<group>"; };
+		89589D7E2919086500F82BFC /* getExerciseDetail77.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getExerciseDetail77.json; sourceTree = "<group>"; };
+		89589D7F2919086500F82BFC /* getExercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getExercises.json; sourceTree = "<group>"; };
+		89589D832919098F00F82BFC /* ExerciseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseServiceTests.swift; sourceTree = "<group>"; };
 		895A45662912F6FB00CBD5F6 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		895A45672912F6FB00CBD5F6 /* ExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
 		895A456A2912F80C00CBD5F6 /* ExerciseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModel.swift; sourceTree = "<group>"; };
@@ -154,6 +164,8 @@
 		890029822912893F00B65DAA /* GymBodeTests */ = {
 			isa = PBXGroup;
 			children = (
+				89589D7C2919084D00F82BFC /* StubData */,
+				89589D772919069A00F82BFC /* Service */,
 				8972B533291431CC003B8B41 /* Scenes */,
 			);
 			path = GymBodeTests;
@@ -186,7 +198,6 @@
 				89189A6C2915A5C5002EDD3C /* ApiTargets */,
 				890029A22912A1AD00B65DAA /* Model */,
 				890029A12912A1A000B65DAA /* Services */,
-				89189A6F2915AF2E002EDD3C /* StubData */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -288,9 +299,21 @@
 			path = ApiTargets;
 			sourceTree = "<group>";
 		};
-		89189A6F2915AF2E002EDD3C /* StubData */ = {
+		89589D772919069A00F82BFC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				89589D7A291906C900F82BFC /* MockExerciseService.swift */,
+				89589D832919098F00F82BFC /* ExerciseServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		89589D7C2919084D00F82BFC /* StubData */ = {
+			isa = PBXGroup;
+			children = (
+				89589D7D2919086500F82BFC /* getExerciseDetail15.json */,
+				89589D7E2919086500F82BFC /* getExerciseDetail77.json */,
+				89589D7F2919086500F82BFC /* getExercises.json */,
 			);
 			path = StubData;
 			sourceTree = "<group>";
@@ -486,6 +509,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89589D802919086500F82BFC /* getExerciseDetail15.json in Resources */,
+				89589D822919086500F82BFC /* getExercises.json in Resources */,
+				89589D812919086500F82BFC /* getExerciseDetail77.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +558,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8972B537291431ED003B8B41 /* ExerciseListViewModelTests.swift in Sources */,
+				89589D842919098F00F82BFC /* ExerciseServiceTests.swift in Sources */,
 				8972B53A2914320D003B8B41 /* ExerciseCellViewModelTests.swift in Sources */,
+				89589D7B291906C900F82BFC /* MockExerciseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
