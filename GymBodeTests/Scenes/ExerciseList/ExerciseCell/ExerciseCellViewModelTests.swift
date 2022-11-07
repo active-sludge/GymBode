@@ -9,8 +9,8 @@ import XCTest
 @testable import GymBode
 
 final class ExerciseCellViewModelTests: XCTestCase {
-    var sut: ExerciseCellViewModel!
-    var model: Exercise!
+    private var sut: ExerciseCellViewModel!
+    private var model: Exercise!
     
     override func setUpWithError() throws {
         try super.setUpWithError()

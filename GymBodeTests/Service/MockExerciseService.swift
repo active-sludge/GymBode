@@ -14,14 +14,18 @@ class MockExerciseService: ExerciseServicable {
         let exerciseListResponse: ExerciseListResponse = testExercise(forResource: "getExercises")!
         let publisher = CurrentValueSubject<GymBode.ExerciseListResponse, GymBode.NetworkError>(exerciseListResponse)
         
-        return publisher.eraseToAnyPublisher()
+        return publisher
+            .delay(for: 1, scheduler: RunLoop.main)
+            .eraseToAnyPublisher()
     }
     
     func getExerciseDetail(with id: Int) -> AnyPublisher<GymBode.Exercise, GymBode.NetworkError> {
         let exercise: Exercise = testExercise(forResource: "getExerciseDetail\(id)")!
         let publisher = CurrentValueSubject<GymBode.Exercise, GymBode.NetworkError>(exercise)
         
-        return publisher.eraseToAnyPublisher()
+        return publisher
+            .delay(for: 1, scheduler: RunLoop.main)
+            .eraseToAnyPublisher()
     }
     
     private func testExercise<T: Codable>(forResource resource: String) -> T? {
