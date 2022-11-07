@@ -1,5 +1,6 @@
 # GymBode
-<img src="ss-1.png" width=“300”/> <img src="ss-2.png" width=“300”/> 
+<img src="ss-2.png" height="500"/> <img src="ss-1.png" height="500"/>
+
 Browse exercises, see details and variations.
 
 ## Features
