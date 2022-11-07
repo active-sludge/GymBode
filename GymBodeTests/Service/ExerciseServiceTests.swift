@@ -27,7 +27,7 @@ final class ExerciseServiceTests: XCTestCase {
         var result: ExerciseListResponse!
         let expectedListItemCount = 20
         let firstItemId = 345
-        let expectation = self.expectation(description: #function)
+        let expectation = expectation(description: "Wait for service response")
         
         // When
         sut.getExerciseList()
@@ -59,7 +59,7 @@ final class ExerciseServiceTests: XCTestCase {
         let expectedName = "Bankdrücken LH"
         let expectedFirstImage = "https://wger.de/media/exercise-images/192/Bench-press-1.png"
         let expectedFirstVariationID = 77
-        let expectation = self.expectation(description: #function)
+        let expectation = expectation(description: "Wait for service response")
         
         // When
         sut.getExerciseDetail(with: exerciseID)

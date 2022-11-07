@@ -22,44 +22,55 @@ final class ExerciseListViewModelTests: XCTestCase {
         bindings = []
     }
 
-    func testExample() throws {
+    func testFetchExerciseListAssignsExerciseList() throws {
         //Given
         let expectedArrayCount = 20
         let expectedFirstExerciseID = 345
+        let expectation = expectation(description: "Wait for exercise response to return.")
         
         // When
         sut.fetchExerciseList()
+        expectation.fulfill()
         
         //Then
+        waitForExpectations(timeout: 1.5)
         XCTAssertEqual(sut.exercises.count, expectedArrayCount)
         XCTAssertEqual(sut.exercises.first?.id, expectedFirstExerciseID)
     }
     
-    func testInitialStateIsIdleBeforeFetchStarted() throws {
+    func testStateChangesFromIdleToLoadingWhenFetchStarted() throws {
         // Given
-        let expectedState: ExerciseListViewModel.ExerciseListViewModelStates = .idle
-    
+        let initialState: ExerciseListViewModel.ExerciseListViewModelStates = .idle
+        let expectedState: ExerciseListViewModel.ExerciseListViewModelStates = .loading
+        
+        let loadingExpectation = expectation(description: "Wait for state to change to loading.")
+        
+        XCTAssertEqual(sut.state, initialState)
+        
         // When
         sut.fetchExerciseList()
+        loadingExpectation.fulfill()
         
         // Then
+        waitForExpectations(timeout: 0.5, handler: nil)
         XCTAssertEqual(sut.state, expectedState)
     }
     
-    func stateChangesFromIdleToLoadingWhenFetchStarted() throws {
+    func testStateChangesFromLoadingToFinishedLoadingWhenFetchFinished() throws {
         // Given
-        let expectedState: ExerciseListViewModel.ExerciseListViewModelStates = .loading
-        let initialState: ExerciseListViewModel.ExerciseListViewModelStates = .idle
-        let finalState: ExerciseListViewModel.ExerciseListViewModelStates = .finishedLoading
+        let initialState: ExerciseListViewModel.ExerciseListViewModelStates = .loading
+        let expectedState: ExerciseListViewModel.ExerciseListViewModelStates = .finishedLoading
+        
+        let finishedLoadingExpectation = expectation(description: "Wait for state to change to finishedLoading.")
         
         // When
         sut.fetchExerciseList()
+        XCTAssertEqual(sut.state, initialState)
+        finishedLoadingExpectation.fulfill()
         
         // Then
+        waitForExpectations(timeout: 1.5, handler: nil)
         XCTAssertEqual(sut.state, expectedState)
-        XCTAssertEqual(sut.state, initialState)
-        XCTAssertEqual(sut.state, finalState)
-        
     }
 
 }

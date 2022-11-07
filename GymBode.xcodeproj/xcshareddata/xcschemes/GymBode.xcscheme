@@ -42,6 +42,12 @@
                <Test
                   Identifier = "ExerciseCellViewModelTests/testPerformanceExample()">
                </Test>
+               <Test
+                  Identifier = "ExerciseListViewModelTests/testFetchExerciseListAssignsExerciseList()">
+               </Test>
+               <Test
+                  Identifier = "ExerciseListViewModelTests/testStateChangesFromLoadingToFinishedLoadingWhenFetchFinished()">
+               </Test>
             </SkippedTests>
          </TestableReference>
          <TestableReference
