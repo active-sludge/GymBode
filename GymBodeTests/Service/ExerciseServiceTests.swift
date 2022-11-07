@@ -19,6 +19,7 @@ final class ExerciseServiceTests: XCTestCase {
     
     override func tearDownWithError() throws {
         sut = nil
+        bindings = []
     }
     
     func testExerciseServiceSubscriberReceivesExerciseListResponse() throws {
