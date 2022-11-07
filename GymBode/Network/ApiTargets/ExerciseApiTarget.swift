@@ -27,4 +27,13 @@ extension ExerciseApiTarget: ApiTargetable {
             return "exerciseinfo/\(id)"
         }
     }
+    
+    var sampleData: Data {
+        switch self {
+        case .getExerciseList:
+            return Data()
+        case .getExerciseDetail:
+            return Data()
+        }
+    }
 }
