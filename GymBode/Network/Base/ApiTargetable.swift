@@ -11,7 +11,6 @@ public protocol ApiTargetable {
     var baseURL: String { get }
     var endpoint: String { get }
     var fullURL: String { get }
-    var sampleData: Data { get }
     var request: NetworkRequest { get }
 }
 
@@ -22,9 +21,5 @@ public extension ApiTargetable {
     
     var request: NetworkRequest {
         NetworkRequest(url: fullURL)
-    }
-    
-    var sampleData: Data {
-        Data()
     }
 }
